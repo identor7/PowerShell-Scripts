@@ -1,4 +1,9 @@
-﻿Set-Executionpolicy -Scope CurrentUser -ExecutionPolicy UnRestricted
+﻿    # This script
+    # Searches forder for *.xlsx
+    # If found it starts looking files with the same name but with other extenstion in specific folders
+    # All found files will be packed to WinRar archive and then they will be deleted (-DF key)
+
+Set-Executionpolicy -Scope CurrentUser -ExecutionPolicy UnRestricted
 
 $name = dir "D:\org\For_sending\Export" | Where-Object {$_.Extension -like "*.xlsx"} #Search all docs with extention xlsx
 foreach ( $i in $name ) {
